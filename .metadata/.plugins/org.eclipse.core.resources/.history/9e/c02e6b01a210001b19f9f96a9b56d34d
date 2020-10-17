@@ -1,0 +1,56 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import generic.BaseTest;
+
+
+public class ValidLogin extends BaseTest{
+	@Test(priority=1)
+	public void testValidLogin() throws InterruptedException{
+		
+		driver.findElement(By.cssSelector(".login")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#email")).sendKeys("jetblue@grr.la");  
+		Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#email")).sendKeys("jetblue");  
+		driver.findElement(By.cssSelector("#SubmitLogin")).click();
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("(//*[@id=\"block_top_menu\"]//a[contains(.,'T-shirts')])[2]")).click();
+	
+		Thread.sleep(5000);
+		
+		driver.findElement(By.cssSelector("img[title='Faded Short Sleeve T-shirts']")).click();;
+		Thread.sleep(5000);
+		
+		driver.findElement(By.cssSelector("button.exclusive")).click();
+		
+		Thread.sleep(5000);
+		
+		
+		
+		
+		driver.findElement(By.cssSelector("a[class='btn btn-default button button-medium']")).click();
+			
+		Thread.sleep(5000);
+		WebElement l = driver.findElement(By.cssSelector("(span[title='Close window'] +h2)"));
+	    
+	     String ActualTitle= l.getText());
+	      
+	      
+		String ExpectedTitle = "Product successfully added to your shopping cart";
+		Assert.assertEquals(ExpectedTitle, ActualTitle);
+		
+	}
+}
+
+
+
+
+
+
+

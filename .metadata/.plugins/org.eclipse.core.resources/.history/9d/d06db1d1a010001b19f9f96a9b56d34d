@@ -1,0 +1,32 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import generic.BaseTest;
+
+
+public class ValidLogin extends BaseTest{
+	@Test(priority=1)
+	public void testValidLogin() throws InterruptedException{
+		
+		driver.findElement(By.cssSelector(".login")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#email")).sendKeys("jetblue@grr.la");  
+		Thread.sleep(5000);
+		driver.findElement(By.cssSelector("#email")).sendKeys("jetblue");  
+		driver.findElement(By.cssSelector("#SubmitLogin")).click();
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("(//*[@id=\"block_top_menu\"]//a[contains(.,'T-shirts')])[2]")).click();
+	
+		
+	}
+}
+
+
+
+
+
+
+

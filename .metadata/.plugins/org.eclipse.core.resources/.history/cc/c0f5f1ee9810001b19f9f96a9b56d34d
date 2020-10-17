@@ -1,0 +1,12 @@
+package waetherapi;
+
+public class Payload {
+	
+
+	public static String createPlaceData()
+	{;
+		String b="{\n  external_id\": -SF_TEST001,\n    \"name\": San Francisco Test Station\n  },\n  \"latitude\": 37.76,\n  \"longitude\": \"-122.43\",\n  \"altitude\": \"150\",\n }";
+	return b;
+	}
+
+}

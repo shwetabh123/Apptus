@@ -1,0 +1,27 @@
+package test;
+
+import org.testng.annotations.Test;
+import com.actitime.page.EnterTimeTrackPage;
+import com.actitime.page.LoginPage;
+import generic.BaseTest;
+import generic.Excel;
+
+public class ValidLogin extends BaseTest{
+	@Test(priority=1)
+	public void testValidLogin(){
+		
+			LoginPage l=new LoginPage(driver);
+			l.setUserName(un);
+			l.setPassword(pw);
+			l.clickLogin();
+			EnterTimeTrackPage e=new EnterTimeTrackPage(driver);
+			e.verifyTitle(HPT);
+	}
+}
+
+
+
+
+
+
+

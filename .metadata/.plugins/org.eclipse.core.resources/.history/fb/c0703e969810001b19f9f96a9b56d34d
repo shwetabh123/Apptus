@@ -1,0 +1,5 @@
+package waetherapi;
+
+public class Payload {
+
+}

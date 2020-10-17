@@ -1,0 +1,24 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import generic.BaseTest;
+
+
+public class ValidLogin extends BaseTest{
+	@Test(priority=1)
+	public void testValidLogin(){
+		
+		driver.findElement(By.cssSelector(a[innertext='Log Out']));  
+		
+		
+	}
+}
+
+
+
+
+
+
+

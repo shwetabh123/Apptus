@@ -1,0 +1,64 @@
+package TestFramework;
+
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import waetherapi.Payload;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.Test;
+
+
+public class Test1 {
+	
+	@Test
+	public void test1()
+	{
+
+
+	RestAssured.baseURI="https://openweathermap.org";
+	
+	given().
+	      
+	      
+	       
+	 when().
+	       get("/stations").
+	       
+	 then().
+	 
+	       assertThat().statusCode(401).and().contentType(ContentType.JSON).and().
+	       body("message",equalTo("Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."));
+	       
+	   
+
+}
+
+	@Test
+	public void test2()
+	{
+
+
+	RestAssured.baseURI="http://api.openweathermap.org/data/3.0/stations";
+	
+	given().
+	queryParam("key","AIzaSyDIQgAh0B4p0SdyYkyW8tlG-y0yJMfss5Y").
+	
+	body(Payload.createPlaceData()). 
+	       
+	 when().
+	 post("/maps/api/place/add/json").
+	       
+	 then().
+	 
+	       assertThat().statusCode(201).and().contentType(ContentType.JSON);
+	   
+
+}
+
+	
+	
+	
+}
